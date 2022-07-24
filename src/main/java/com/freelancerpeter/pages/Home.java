@@ -60,9 +60,9 @@ public class Home extends FlexLayout {
 		content.add(textcontent);
 		Span textContent2 = new Span(
 				"I develop quite a lot of things(as you can see on my github) quite constantly. \n"
-				+ "I use Java(openJDK 17)(I know, I know) as my main programming language, I also use Javascript, Kotlin(learning), Typescript, PhP(rarely), Rust(learning)");
+				+ "I use Java(openJDK 17)(I know, I know) as my main programming language, I also use Javascript, Kotlin(learning), PhP(rarely), Rust(learning)");
 		textContent2.getStyle().set("text-align", "center");
-		Span textContent3 = new Span("This site was Made Vaadin 22.x.x !");
+		Span textContent3 = new Span("This site was Made Vaadin 23.x.x !");
 		textContent3.getStyle().set("text-align", "center");
 		Span textContent4 = new Span("If you have any suggestions to improve this site, contact me via email('Contact' page)");
 		content.add(textContent2);

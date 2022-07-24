@@ -58,7 +58,7 @@ public class About extends FlexLayout {
 				"I develop quite a lot of things(as you can see on my github) quite constantly, sometimes I'm amazed by my perseverence to "
 						+ "fix/update my old projects, As I am a loser and can't get a job I do this with pleasure and it relaxes me !");
 		Span text3 = new Span(
-				"This is a test website, ATM I'm fixing/improving a discord bot for my gaming friends/team as the official Rhythm music bot was banned by YT.");
+				"ATM I'm working on a few projects that include technologies such as Vaadin, NodeJS, EdgeDB (graph-relational database) and improving my Rust !");
 
 		Span text4 = new Span(
 				"P.S I have a degree in Computer Science, but it seems I can wipe my a** with that diploma !! hahahahaha");

@@ -13,6 +13,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -67,15 +68,41 @@ content = new VerticalLayout();
 		desc.add("It can play anything that is not age restriced, yes, it can play live streaming, quite complete set of commands that can range from adding in queue to pause/stop/repeat/skip/search and more. More info is available on the github page.\n ");
 		desc.getStyle().set("text-align","center");
 		Span build =  new Span("Build with: Node17, Typescript, custom compiled ffmpeg instead of ffmpeg-static\n");
+		Span alternatives =  new Span("Also I created Java alternative to this Discord Bot *Tempo-DBot* and a Rust version of this *Aurras*.");
+		HorizontalLayout linkLayout =  new HorizontalLayout();
 		
 		Anchor githublink1 =  new Anchor("https://github.com/spectral369/Rhythm-Bot", "Rhythm-Bot");
+		Anchor githublink11 =  new Anchor("https://github.com/spectral369/Tempo-DBot", "Tempo-DBot");
+		Anchor githublink12 =  new Anchor("https://github.com/spectral369/Aurras", "Aurras");
+		
 		githublink1.setTarget(AnchorTarget.BLANK);
+		githublink11.setTarget(AnchorTarget.BLANK);
+		githublink12.setTarget(AnchorTarget.BLANK);
+		
+		linkLayout.add(githublink1,githublink11,githublink12);
+		linkLayout.setAlignItems(Alignment.CENTER);
 	
 		content.add(textcontent);
 		content.add(desc);
 		content.add(build);
-		content.add(githublink1);
+		content.add(alternatives);
+		content.add(linkLayout);
 		content.setAlignItems(Alignment.CENTER);
+		
+		
+		H3 pdvBirotica =  new  H3("\n\nPDV Birotica\n");
+		Span textcontent21 = new Span();
+		textcontent21.add("PDV Birotica is a Vaadin website for romanian declarations and certificates.\n");
+		textcontent21.getStyle().set("text-align","center");
+		Span build23 =  new Span("Build with: Java1 17, Vaadin 23 and IText 7.\n");
+		Anchor githublink24 =  new Anchor("https://github.com/spectral369/PDV_birotica", "PDV_Birotica");
+		githublink24.setTarget(AnchorTarget.BLANK);
+		content.add(pdvBirotica);
+		content.add(textcontent21);
+		content.add(build23);
+		content.add(githublink24);
+		content.setAlignItems(Alignment.CENTER);
+		
 		
 		
 		H3 h3WebChecker =  new  H3("\n\nWebsiteChecker\n");

@@ -40,13 +40,13 @@ import com.vaadin.flow.theme.lumo.Lumo;
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 @EnableScheduling
 //@Push(value = PushMode.AUTOMATIC, transport = Transport.WEBSOCKET) //disabled temporary
-public class Application extends SpringBootServletInitializer implements AppShellConfigurator, ServletContextListener{
+public class Application extends SpringBootServletInitializer implements AppShellConfigurator, ServletContextListener {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1831875954710899959L;
-	
+
 	ScheduledExecutorService executor = null;
 
 	public static void main(String[] args) {
@@ -64,32 +64,33 @@ public class Application extends SpringBootServletInitializer implements AppShel
 
 			}
 		});
-		
+
 		LaunchUtil.launchBrowserInDevelopmentMode(app.run(args));
 	}
+
 	@Async
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		
-	AccountsInfo info =  new AccountsInfo();	
-	System.out.println(info.getSTEAMKEY());
-	System.out.println(info.getSTEAMID());
-	
-		  executor = Executors.newScheduledThreadPool(1);
 
-		  executor.scheduleAtFixedRate(SteamLoadingThread.getInstance(info), 0, 3, TimeUnit.HOURS);
-		  executor.scheduleAtFixedRate(MastodonLoadingThread.getInstance(info), 0, 3, TimeUnit.HOURS);
-		 event.getServletContext().setAttribute("SCHEDULER", executor);
+		AccountsInfo info = new AccountsInfo();
+		System.out.println(info.getSTEAMKEY());
+		System.out.println(info.getSTEAMID());
+
+		executor = Executors.newScheduledThreadPool(1);
+
+		executor.scheduleAtFixedRate(SteamLoadingThread.getInstance(info), 0, 3, TimeUnit.HOURS);
+		executor.scheduleAtFixedRate(MastodonLoadingThread.getInstance(info), 0, 3, TimeUnit.HOURS);
+		event.getServletContext().setAttribute("SCHEDULER", executor);
 	}
-	
+
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {
-	  executor.shutdownNow();
-	 }
+		executor.shutdownNow();
+	}
 
 	@Override
 	public void configurePage(AppShellSettings settings) {
-		
+
 		settings.addMetaTag("description", "Freelancingpeter - Personal Web Site");
 		settings.addLink("start", "/");
 		settings.addMetaTag("keywords", "freelancing, freelance, peter, freelancingpeter, peterfreelance, spectral369");
@@ -105,7 +106,7 @@ public class Application extends SpringBootServletInitializer implements AppShel
 		settings.addMetaTag("Access-Control-Allow-Headers", "Content-Type");
 		settings.addMetaTag("Access-Control-Allow-Methods", "GET, DELETE, HEAD, OPTIONS");
 		settings.addMetaTag("google-site-verification", "tWuh1W7Qk3k_bJE20N7myp_DvjfcxroYbbNvX-JAKpw");
-		//UI.getCurrent().getPushConfiguration().setPushUrl("https://freelancingpeter.eu");
+		// UI.getCurrent().getPushConfiguration().setPushUrl("https://freelancingpeter.eu");
 	}
 
 }

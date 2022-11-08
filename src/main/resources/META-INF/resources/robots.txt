@@ -1,0 +1,4 @@
+Sitemap: https://freelancingpeter.eu/sitemap.xml
+
+User-agent: * 
+Allow: /

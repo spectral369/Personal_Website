@@ -61,7 +61,7 @@ public class Home extends FlexLayout {
 		Span textContent2 = new Span("I develop quite a lot of things(as you can see on my github) quite constantly. \n"
 				+ "I use Java(openJDK 17)(I know, I know) as my main programming language, I also use Javascript, Kotlin(learning), PhP(rarely), Rust(learning)");
 		textContent2.getStyle().set("text-align", "center");
-		Span textContent3 = new Span("This website was made Vaadin 23.x.x !");
+		Span textContent3 = new Span("This website was made with Vaadin 24.x.x  !");
 		textContent3.getStyle().set("text-align", "center");
 		Span textContent4 = new Span(
 				"Update 10.08.2022: I am quite pissed of because after ~40 job applications and ~20 interviews I cannot get a fucking job, latest disappointment was \n"
@@ -77,10 +77,14 @@ public class Home extends FlexLayout {
 						+ "P.S Still no job ! and EU pisses me off more each passing day! latest annoyance: they put 2FA on europass portal and I cannot access it !\n"
 						+ "P.P.S I should re start working on this website again !");
 		textContent5.getStyle().set("text-align", "center");
+		Span textContent6 =  new  Span("Update 03.01.2023: Since 27.12.2022 all my web stuff is hosted on my Raspberry Pi 4v1.4 ! I'm glad I am able to self host my stuff !"
+				+ "Good learning experience ! ");
+		textContent6.getStyle().set("text-align", "center");
 		content.add(textContent2);
 		content.add(textContent3);
 		content.add(textContent4);
 		content.add(textContent5);
+		content.add(textContent6);
 		content.setAlignItems(Alignment.CENTER);
 		content.getStyle().set("border-right", "ridge");
 		content.getStyle().set("border-left", "ridge");

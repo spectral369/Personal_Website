@@ -61,8 +61,8 @@ public class SteamSide extends VerticalLayout {
 			username.getStyle().set("font-family", "Motiva Sans, Sans-serif");
 			username.getStyle().set("font-weight", "200");
 			steamContent.add(username);
-			Label gamesOwned = new Label("Games owned: "
-					+ getJsonValue("game_count", Data.INSTANCE.getSteam().get(1)/* getAllGames() */, 0));
+			Label gamesOwned = new Label(
+					"Games owned: " + getJsonValue("game_count", Data.INSTANCE.getSteam().get(1), 0));
 			gamesOwned.getStyle().set("text-shadow", "1px 1px 2px #000000aa");
 			gamesOwned.getStyle().set("font-family", "Motiva Sans, Sans-serif");
 			gamesOwned.getStyle().set("font-weight", "200");
@@ -80,11 +80,35 @@ public class SteamSide extends VerticalLayout {
 				Avatar game0Avatar = new Avatar(getJsonValue("name", Data.INSTANCE.getSteam().get(2), i),
 						game0AvatarStr);
 				VerticalLayout game0Stats = new VerticalLayout();
-				Label game0Name = new Label(getJsonValue("name", Data.INSTANCE.getSteam().get(2), i));
+				String gameNamePre = getJsonValue("name", Data.INSTANCE.getSteam().get(2), i);
+				String[] r = gameNamePre.split("(?=\\p{Lu})");
+				StringBuilder sb1 = new StringBuilder();
+				for (String rs : r) {
+					sb1.append(rs);
+					sb1.append(" ");
+				}
+
+				String prel2 = sb1.toString();
+				String[] r2 = prel2.split("(?=[–&0-9])");
+				sb1 = new StringBuilder();
+				for (String rs : r2) {
+					sb1.append(rs);
+					sb1.append(" ");
+				}
+
+				String prel3 = sb1.toString();
+				sb1 = new StringBuilder();
+				String[] r3 = prel3.split("(?=of|by)");
+				for (String rs : r3) {
+					sb1.append(rs);
+					sb1.append(" ");
+				}
+
+				String finalGameName = sb1.toString().replaceAll("\\s+", " ");
+
+				Label game0Name = new Label(finalGameName);
 				game0Name.setWidthFull();
 				game0Stats.addClassName("labelAdjust");
-				game0Stats.getStyle().set("text-align", "center");
-				game0Stats.getStyle().set("word-wrap", "break-word");//test
 
 				game0Stats.add(game0Name);
 				int playtimeGame0Min = Integer

@@ -1,6 +1,6 @@
-## My personal Website(in development)
+## Personal Website [freelancingpeter.eu ](https://freelancingpeter.eu) Source Code
 
-### - Created with Vaadin 23
+### - Created with Vaadin 24
 ### - Auto Steam stats fetch
 ### - Auto Mastodon hashtag toots fetch
 ### - Contains redacted CV info

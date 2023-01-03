@@ -1,8 +1,8 @@
 package com.freelancingpeter.main;
 
 import com.freelancingpeter.data.AccountsInfo;
-import com.freelancingpter.workers.MastodonLoadingThread;
-import com.freelancingpter.workers.SteamLoadingThread;
+import com.freelancingpeter.workers.MastodonLoadingThread;
+import com.freelancingpeter.workers.SteamLoadingThread;
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Meta;
@@ -12,13 +12,13 @@ import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
 
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+
 import java.io.PrintStream;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;

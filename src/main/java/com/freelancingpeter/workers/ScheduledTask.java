@@ -1,4 +1,4 @@
-package com.freelancingpter.workers;
+package com.freelancingpeter.workers;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

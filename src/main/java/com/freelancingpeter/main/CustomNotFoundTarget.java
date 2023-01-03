@@ -1,6 +1,5 @@
 package com.freelancingpeter.main;
 
-import javax.servlet.http.HttpServletResponse;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.Notification.Position;
@@ -9,6 +8,8 @@ import com.vaadin.flow.router.ErrorParameter;
 import com.vaadin.flow.router.NotFoundException;
 import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.RouteNotFoundError;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @ParentLayout(MainView.class)
 public class CustomNotFoundTarget extends RouteNotFoundError {

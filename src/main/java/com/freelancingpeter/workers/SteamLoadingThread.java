@@ -1,4 +1,4 @@
-package com.freelancingpter.workers;
+package com.freelancingpeter.workers;
 
 import java.io.IOException;
 import java.io.InputStream;
